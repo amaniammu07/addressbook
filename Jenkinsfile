@@ -16,14 +16,5 @@ pipeline {
                 sh 'mvn package'
             }
         }
-    }
-  post {
-  success { 
-      body: '${BUILD_NUMBER}',subject: 'build completed with status ${BUILD_STATUS}', to: 'amaniammu2101@gmail.com'
-  }
-  failure
-      {
-          body: '{BUILD_NUMBER}',subject: 'build has completed with status ${BUILD_STATUS}', to: 'amaniammu2101@gmail.com'
-      } 
   }
 }
