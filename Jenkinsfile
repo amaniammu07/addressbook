@@ -18,12 +18,12 @@ pipeline {
         }
     }
   post {
-  success {
-    // One or more steps need to be included within each condition's block.
+  success { 
+      body: '${BUILD_NUMBER}',subject: 'build completed with status ${BUILD_STATUS}', to: 'amaniammu2101@gmail.com'
   }
-  failure {
-    // One or more steps need to be included within each condition's block.
-        }
-     }   
+  failure
+      {
+          body: '{BUILD_NUMBER}',subject: 'build has completed with status ${BUILD_STATUS}', to: 'amaniammu2101@gmail.com'
+      } 
   }
-
+}
