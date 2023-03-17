@@ -1,20 +1,16 @@
 pipeline {
-    agent any 
+    agent any
+    
     stages {
-        stage('Build') { 
-            steps {
-                 
+      stage('git pull source code') {
+         steps {
+            git branch: 'master' ,url: 'https://github.com/amaniammu07/addressbook.git'
+              }
             }
-        }
-        stage('Test') { 
-            steps {
-                 
-            }
-        }
-        stage('Deploy') { 
-            steps {
-               
-            }
-        }
-    }
-}
+            stage('hello') {
+              steps {
+                 echo 'helloworld
+                 }
+             }
+          }
+       }
